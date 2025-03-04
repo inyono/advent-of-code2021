@@ -18,8 +18,11 @@ class Day01TestCase(unittest.TestCase):
 263"""
         self.day01 = Day01(io.StringIO(example))
 
-    def test_something(self):
-        self.assertEqual(7, self.day01.solve_part1())  # add assertion here
+    def test_part1(self):
+        self.assertEqual(7, self.day01.solve_part1())
+
+    def test_part2(self):
+        self.assertEqual(5, self.day01.solve_part2())
 
 
 if __name__ == "__main__":

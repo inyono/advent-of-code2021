@@ -10,3 +10,13 @@ class Day01:
                 result += 1
             previous = number
         return result
+
+    def solve_part2(self):
+        result = 0
+        previous = sum(self.numbers[:3])
+        for i in range(3, len(self.numbers)):
+            acc = previous + self.numbers[i] - self.numbers[i - 3]
+            if acc > previous:
+                result += 1
+            previous = acc
+        return result
