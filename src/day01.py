@@ -1,8 +1,14 @@
+from typing import TextIO
+
+
 class Day01:
-    def __init__(self, stream):
+    def __init__(self, stream: TextIO) -> None:
         self.numbers = [int(line.strip()) for line in stream]
 
-    def solve_part1(self):
+    def solve_part1(self) -> int:
+        if len(self.numbers) < 2:
+            return 0
+
         result = 0
         previous = self.numbers[0]
         for number in self.numbers[1:]:
@@ -11,7 +17,10 @@ class Day01:
             previous = number
         return result
 
-    def solve_part2(self):
+    def solve_part2(self) -> int:
+        if len(self.numbers) < 3:
+            return 0
+
         result = 0
         previous = sum(self.numbers[:3])
         for i in range(3, len(self.numbers)):
