@@ -17,6 +17,9 @@ forward 2"""
     def test_part1(self):
         self.assertEqual(150, self.day02.solve_part1())
 
+    def test_part2(self):
+        self.assertEqual(900, self.day02.solve_part2())
+
 
 if __name__ == "__main__":
     unittest.main()

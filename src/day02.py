@@ -30,3 +30,16 @@ class Day02:
                 case Command.DOWN:
                     y += val
         return x * y
+
+    def solve_part2(self) -> int:
+        x, y, aim = 0, 0, 0
+        for cmd, val in self.instructions:
+            match cmd:
+                case Command.FORWARD:
+                    x += val
+                    y += aim * val
+                case Command.UP:
+                    aim -= val
+                case Command.DOWN:
+                    aim += val
+        return x * y
