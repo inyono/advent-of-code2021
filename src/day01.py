@@ -1,8 +1,10 @@
-from typing import TextIO
-
 """
 See: https://adventofcode.com/2021/day/1 (Day 1: Sonar Sweep)
 """
+
+from typing import TextIO
+
+
 class Day01:
     def __init__(self, stream: TextIO) -> None:
         self.numbers = [int(line.strip()) for line in stream]
