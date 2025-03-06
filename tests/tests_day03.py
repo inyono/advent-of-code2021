@@ -26,6 +26,10 @@ class Day03TestCase(unittest.TestCase):
     def test_part2(self):
         self.assertEqual(230, self.day03.solve_part2())
 
+    def test_empty(self):
+        self.assertEqual(0, Day03(io.StringIO()).solve_part1())
+        self.assertEqual(0, Day03(io.StringIO()).solve_part2())
+
 
 if __name__ == "__main__":
     unittest.main()
