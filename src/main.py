@@ -3,6 +3,7 @@ from pathlib import Path
 from src.day01 import Day01
 from src.day02 import Day02
 from src.day03 import Day03
+from src.day04 import Day04
 
 if __name__ == "__main__":
     print("--- Day 1: Sonar Sweep ---")
@@ -22,3 +23,9 @@ if __name__ == "__main__":
         day03 = Day03(f)
         print(f"Part 1: {day03.solve_part1()}")
         print(f"Part 2: {day03.solve_part2()}")
+
+    print("--- Day 4: Giant Squid ---")
+    with open(Path(__file__).parent.parent / "inputs" / "day04.txt", "r") as f:
+        day04 = Day04(f)
+        print(f"Part 1: {day04.solve_part1()}")
+        print(f"Part 2: {day04.solve_part2()}")
