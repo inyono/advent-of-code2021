@@ -23,6 +23,9 @@ class Day03TestCase(unittest.TestCase):
     def test_part1(self):
         self.assertEqual(198, self.day03.solve_part1())
 
+    def test_part2(self):
+        self.assertEqual(230, self.day03.solve_part2())
+
 
 if __name__ == "__main__":
     unittest.main()
