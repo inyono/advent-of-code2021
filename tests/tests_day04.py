@@ -30,6 +30,9 @@ class Day04TestCase(unittest.TestCase):
     def test_part1(self):
         self.assertEqual(4512, self.day04.solve_part1())
 
+    def test_part2(self):
+        self.assertEqual(1924, self.day04.solve_part2())
+
 
 if __name__ == "__main__":
     unittest.main()

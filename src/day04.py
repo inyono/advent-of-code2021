@@ -42,19 +42,30 @@ class Day04:
         for line in lines[2:]:
             if not line:
                 if board:
-                    self.boards.append(Bingo(board))
+                    self.boards.append(board)
                     board = []
                 continue
             board.append(list(map(int, line.split())))
         if board:
-            self.boards.append(Bingo(board))
+            self.boards.append(board)
 
     def solve_part1(self) -> int:
+        boards = [Bingo(board) for board in self.boards]
         for number in self.numbers:
-            for board in self.boards:
+            for board in boards:
                 if board.mark(number):
                     return board.score * number
         return 0
 
     def solve_part2(self) -> int:
+        boards = [Bingo(board) for board in self.boards]
+        has_won = [False] * len(self.boards)
+        finished_boards = 0
+        for number in self.numbers:
+            for i, board in enumerate(boards):
+                if not has_won[i] and board.mark(number):
+                    has_won[i] = True
+                    finished_boards += 1
+                    if finished_boards == len(self.boards):
+                        return board.score * number
         return 0
