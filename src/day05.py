@@ -28,21 +28,16 @@ class Line:
                 if self.point1[0] < self.point2[0]
                 else (self.point2, self.point1)
             )
-            step_x = 1 if bottom[0] >= top[0] else -1
             step_y = 1 if bottom[1] >= top[1] else -1
             return [
                 (x, y)
                 for x, y in zip(
-                    range(top[0], bottom[0] + step_x, step_x),
+                    range(top[0], bottom[0] + 1),
                     range(top[1], bottom[1] + step_y, step_y),
                 )
             ]
         else:
             return []
-
-    @property
-    def is_valid(self) -> bool:
-        return self.is_horizontal or self.is_vertical or self.is_diagonal
 
     @property
     def is_horizontal(self) -> bool:
@@ -81,7 +76,6 @@ class Line:
 class Day05:
     def __init__(self, input_file: TextIO) -> None:
         self.lines = [Line(line.strip()) for line in input_file]
-        return
 
     def solve_part1(self) -> int:
         relevant_lines = [
