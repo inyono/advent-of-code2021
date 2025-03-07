@@ -1,7 +1,7 @@
 import io
 import unittest
 
-from src.day05 import Day05
+from src.day05 import Day05, Line
 
 
 class Day05TestCase(unittest.TestCase):
@@ -22,7 +22,23 @@ class Day05TestCase(unittest.TestCase):
         self.assertEqual(5, self.day05.solve_part1())
 
     def test_part2(self):
-        self.assertEqual(0, self.day05.solve_part2())
+        self.assertEqual(12, self.day05.solve_part2())
+
+    def test_horizontal_line(self):
+        line = Line("1,1 -> 1,3")
+        self.assertEqual(line.covered_points(), [(1, 1), (1, 2), (1, 3)])
+
+    def test_vertical_line(self):
+        line = Line("9,7 -> 7,7")
+        self.assertEqual(line.covered_points(), [(7, 7), (8, 7), (9, 7)])
+
+    def test_diagonal_line_bottom_right(self):
+        line = Line("1,1 -> 3,3")
+        self.assertEqual(line.covered_points(), [(1, 1), (2, 2), (3, 3)])
+
+    def test_diagonal_line_top_right(self):
+        line = Line("9,7 -> 7,9")
+        self.assertEqual(line.covered_points(), [(7, 9), (8, 8), (9, 7)])
 
 
 if __name__ == "__main__":
